@@ -54,7 +54,7 @@ module PublicActivity
     # Set the ORM for use by PublicActivity.
     def self.orm(orm = nil)
       if orm.nil?
-        Thread.current[:public_activity_orm] || :active_record
+        Thread.current[:public_activity_orm] || :mongoid
       else
         Thread.current[:public_activity_orm] = orm.to_sym
       end
